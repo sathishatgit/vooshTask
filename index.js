@@ -7,10 +7,8 @@ import userRoute from "./route/userRoute.js";
 
 dotenv.config();
 async function run() {
-  const mongoURL = "mongodb://127.0.0.1:27017/vooshTech";
-
   try {
-    await mongoose.connect(mongoURL);
+    await mongoose.connect(process.env.mongoUrl);
     console.log("Connected to MongoDB successfully!");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
