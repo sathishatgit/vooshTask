@@ -4,10 +4,8 @@ import jwt from "jsonwebtoken";
 
 export const userSignin = async (req, res) => {
   const UserData = req.body;
-  console.log(UserData.emailId);
 
   const info = await User.findOne({ emailId: UserData.emailId });
-  console.log({ "Cloud Data": info, UserInput: UserData });
   if (info) {
     const isPasswordvaild = await bcrypt.compare(
       UserData.password,
