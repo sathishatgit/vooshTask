@@ -20,8 +20,8 @@ export const userSignin = async (req, res) => {
         expiresIn: "1h",
       });
       res.status(200).send({ userTokenData, authToken: token });
-    } else res.send("invalid username or password");
-  } else res.status(202).send("invalid username");
+    } else res.status(400).send("invalid username or password");
+  } else res.status(400).send("invalid username");
 };
 
 export const userSignup = async (req, res) => {

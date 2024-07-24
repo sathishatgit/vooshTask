@@ -9,7 +9,7 @@ import {
 
 const taskRouter = Router();
 taskRouter.post("/create", createTask);
-taskRouter.get("/all", getTasks);
+taskRouter.post("/all", getTasks);
 taskRouter.get("/view/:id", getTaskById);
 taskRouter.put("/update/:id", updateTask);
 taskRouter.delete("/delete/:id", deleteTask);
